@@ -15,20 +15,91 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>University of Tennessee Newsfeed Demo</title>
 </head>
-<body class="home page-template-default page page-id-8  rock dropnav standard">    
-    <div id="orange-bar"></div>
+<body class="home page-template-default page page-id-8  rock dropnav standard">
+    <div id="orange-bar"></div><div id="page" class="hfeed site row-offcanvas"><div id="main" class="site-main">
+    
     <div class="main-content">
-  
-    <a class="sr-only sr-only-focusable" href="#content" title="Skip to content">Skip to content</a>
-    <a class="sr-only sr-only-focusable" href="#mainnav" title="Skip to  main navigation">Skip to main navigation</a>
-    <a class="sr-only sr-only-focusable" href="https://oed.utk.edu/ada/campus-accessibility/" title="Report an accessibility issue">Report an accessibility issue</a>
+      
+      <a class="sr-only sr-only-focusable" href="#content" title="Skip to content">Skip to content</a>
+      <a class="sr-only sr-only-focusable" href="#mainnav" title="Skip to  main navigation">Skip to main navigation</a>
+      <a class="sr-only sr-only-focusable" href="https://oed.utk.edu/ada/campus-accessibility/" title="Report an accessibility issue">Report an accessibility issue</a>
+    
+    <div id="sidebar" class="">
+      <header id="masthead" class="site-header" role="banner">
+        <h3 class="killer-logo"><a href="https://www.utk.edu">The University of Tennessee, Knoxville</a></h3>
+        <h2 class="sr-only"><a href="http://localhost/hill/" title="Demo Site" rel="home">Demo Site</a></h2>
+        <button type="button" class="toggle close btn-findpage">
+          <span class="sr-only">Toggle navigation</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M4 22h-4v-4h4v4zm0-12h-4v4h4v-4zm0-8h-4v4h4v-4zm3 0v4h17v-4h-17zm0 12h17v-4h-17v4zm0 8h17v-4h-17v4z"/></svg><br>MENU    </button>
+      </header><!-- #masthead -->
+      <!-- #Find Box -->
+      <div class="sidebar-offcanvas">
+        <nav role="navigation" id="mainnav">
+          <button type="button" class="toggle close collapseMenu">
+            <span class="sr-only">Toggle navigation</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/></svg> <span class="close">CLOSE</span>
+          </button>
+          <form id="utk_search" name="utk_seek" method="post" accept-charset="iso-8859-1" action="//www.utk.edu/masthead/query.php">
+            <div class="form-group">
+              <input type="text" name="qt"  class="searchtext form-control"   onfocus="if(this.value == 'Search Demo Site') { this.value = ''; }" placeholder="Search Site" title="search">
+              <input type="hidden" name="qtype" value="site_utk:http://localhost/hill/">
+              <input type="hidden" name="col" value="utk">
+              <input name="go" type="submit" title="Submit" class="btn btn-orange sr-only"  value="Go">
+            </div>
+          </form>
+          <div id="bellows"  class="mobile-flat">
+            <ul class="menu">
+              <li>
+                <a id="drop2" class="home_button" href="http://localhost/hill/"  role="button"  >Home <span class="icon-fa-home pull-right"></span></a>
+              </li>
+              <div class="menu-template-menu-container">
+                <ul id="menu-template-menu" class="menu">
+                  <li><a href="#">Page</a>
+                    <ul class="sub-menu">
+                      <li><a href="#">Sub Page A</a></li>
+                      <li><a href="#">Sub Page B</a></li>
+                      <li><a href="#">Sub Page C</a></li>
+                      <li><a href="#">Sub Page D</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="#">Page B</a>
+                    <ul class="sub-menu">
+                      <li><a href="#">Sub Page E</a></li>
+                      <li><a href="#">Sub Page F</a>
+                      <ul class="sub-menu">
+                        <li><a href="#">Sub Page Fa</a></li>
+                        <li><a href="#">Sub Page Fb</a></li>
+                        <li><a href="#">Sub Page Fc</a></li>
+                      </ul>
+                    </li>
+                      <li><a href="http://Page%20D">Sub Page G</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="#">Page C</a>
+                      <ul class="sub-menu">
+                        <li><a href="#">Sub Page H</a></li>
+                        <li><a href="#">Sub Page I</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <li id="giving" class="dropdown top-menu-item">
+                  <a href="http://giveto.utk.edu">Give to UT <i class="icon-fa-gift fa-lg pull-right"></i></a>
+                </li>
+            </ul>
+          </div>
+          </nav><!-- #site-navigation -->
+      </div>
+    </div>   
+
     
 
-
     
+    <div class="container">
+        <div class="row">
+            <div class="col" id="output-spot">
 
-    
-    <button class="btn btn-primary fetch-data" id="fetch-data">Fetch Data</button>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -85,6 +156,7 @@
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="https://images.utk.edu/scripts/thehill/v2019.20191009.js"></script>
-    <script src="./assets/js/data-fetch.js"></script>
+    <!-- <script src="./assets/js/data-fetch.js"></script> -->
+    <script type="module" src="./assets/js/script.js"></script>
 </body>
 </html>
