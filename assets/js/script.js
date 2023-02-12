@@ -12,25 +12,23 @@ const getLocalFeed = () => {
                 let date = data[i].date;
                 let contentSnippet = data[i].contentSnippet;
 
-                $('#output-row').append("<div class='card news-card col-12'>"
-                    + "<div class='card-header'>"
-                    + "<div class='card-body'>"
-                    + "<h4 class='card-title' id='title'><a href=" 
+                $('#output-spot').append("<div class='card news-card'>"
+
+                    + "<ul class='list-group-flush'>"
+                    + "<li class='list-group-item'><a href=" 
                     + link
                     + "alt='hyperlink for more information>"
                     + title
                     + "</a>"
-                    + "</h4>"
-                    + "</div>"
-                    + "<ul class='list-group-flush'>"
                     + "<li class='list-group-item'> "
                     + date
                     + "</li>"
                     + "<li class='list-group-item'>"
+                    + "<p class='card-text'>"
                     + contentSnippet
+                    + "</p>"
                     + "</li>"
                     + "</ul>"
-                    + "</div>"
                     + "</div>"
                 )
 
@@ -45,10 +43,10 @@ const setGrid = (event) => {
     let elements = document.getElementsByClassName('card')
 
     for (let i = 0; i < elements.length; i++) {
-        if (elements[i].classList.contains('col-sm-3') ){
+        if (elements[i].classList.contains('col-sm-6') ){
             return;
         } else {
-            elements[i].classList.add('col-sm-3')
+            elements[i].classList.add('col-sm-6')
             elements[i].classList.remove('col-12')
         }
         
@@ -64,7 +62,7 @@ const setList = (event) => {
         if (elements[i].classList.contains('col-12') ){
             return;
         } else {
-            elements[i].classList.remove('col-sm-3')
+            elements[i].classList.remove('col-sm-6')
             elements[i].classList.add('col-12')
         }
         
