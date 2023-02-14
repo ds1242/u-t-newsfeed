@@ -37,7 +37,7 @@
 
   ## Languages
 
-  JavaScript<br>HTML<br>CSS<br>JQuery<br>Express<br>RSS Parser<br>Bootstrap<>
+  JavaScript<br>HTML<br>CSS<br>JQuery<br>Express<br>RSS Parser<br>Bootstrap
 
   ## Contributing
 
@@ -52,4 +52,4 @@
 
   Email Us At: david.shaw1242@gmail.com
 
-  Github Repo: https://github.com/ds1242/u-t-audioplayer 
+  Github Repo: https://github.com/ds1242/u-t-newsfeed 
